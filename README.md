@@ -1,6 +1,10 @@
 # angular-meteor-boilerplate
 View the project at <a href="http://angular-meteor-boilerplate.meteor.com">http://angular-meteor-boilerplate.meteor.com</a>
 
+Projects using angular-meteor-boilerplate:
+-  [ridetracker.meteor.com](http://ridetracker.meteor.com)
+-  [cryptograms.meteor.com](http://cryptograms.meteor.com)
+
 This boilerplate is here to give you a starting point for your angular-meteor projects. Essential atmosphere packages are included to give you features like roles and collection schemas out-of-the-box.
 
 ## Motivation
