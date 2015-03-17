@@ -95,6 +95,7 @@ client/         # Client folder
   utilities/          # Contains common services and directives
   views/          # Contains all views
     home/         # example view module
+    about/         # example view module
   app.routes.js          # ui-router config
   index.html         # main html page
   main.css         # main css file
@@ -118,6 +119,7 @@ bower.json            # add to this bower file or use bower install
 
 -  SEO packages
 -  Replace meteor-bower packages with custom packages to eliminate angular double-loading
+-  CLI Generator!
 -  Animations
 -  Whatever else the people want
 
