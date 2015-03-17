@@ -3,6 +3,10 @@ View the project at <a href="http://angular-meteor-boilerplate.meteor.com">http:
 
 This boilerplate is here to give you a starting point for your angular-meteor projects. Essential atmosphere packages are included to give you features like roles and collection schemas out-of-the-box.
 
+## Motivation
+
+I really love Meteor for at least <a href="http://docs.meteor.com/#/full/sevenprinciples">seven reasons</a>. However, I'm not in love with <a href="https://www.meteor.com/blaze">Blaze</a> just yet. Blaze is still very young. The documentation is lackluster, spacebars just doesn't cut it against robust frameworks like Angular, and there aren't many great UI packages just yet (like a ui-bootstrap for spacebars). All of this will come in time, but in the meantime, there's <a href="http://angularjs.meteor.com/">angular-meteor</a>! In fact, angluar-meteor incorporates both <a href="http://angularjs.meteor.com/manifest">Angular and Blaze</a> so you can slowly migrate to Blaze, or slowly migrate to Angular, or use both together forever ♥.
+
 ## Installation
 
 1. Clone the project <code>git clone https://github.com/srtucker22/angular-meteor-boilerplate.git</code>
@@ -43,12 +47,44 @@ BrowserPolicy.content.allowOriginForAll(YOUR_URL);
 Other security enforcing packages like [audit-argument-checks](https://docs.meteor.com/#/full/auditargumentchecks) and 
 [matteodem:easy-security](https://github.com/matteodem/meteor-easy-security) have also been added.
 
-## Motivation
+## Structure
 
-I really love Meteor for at least <a href="http://docs.meteor.com/#/full/sevenprinciples">seven reasons</a>. However, I'm not in love with <a href="https://www.meteor.com/blaze">Blaze</a> just yet. Blaze is still very young. The documentation is lackluster, spacebars just doesn't cut it against robust frameworks like Angular, and there aren't many UI plugins that have been packaged just yet. All of this will come in time, but in the meantime, there's <a href="http://angularjs.meteor.com/">angular-meteor</a>! In fact, angluar-meteor incorporates both <a href="http://angularjs.meteor.com/manifest">Angular and Blaze</a> so you can slowly migrate to Blaze, or slowly migrate to Angular, or use both together forever ♥.
+### Packages Used
+
+* Meteor Core
+  * meteor-platform
+* Angular
+  * [urigo:angular](https://github.com/Urigo/angular-meteor)
+  * [angularui:angular-ui-router](https://atmospherejs.com/angularui/angular-ui-router)
+* Collections
+  * [aldeed:collection2](https://github.com/aldeed/meteor-collection2)
+  * [dburles:collection-helpers](https://github.com/dburles/meteor-collection-helpers)
+* Accounts
+  * [accounts-password](https://github.com/meteor/meteor/tree/devel/packages/accounts-password)
+  * [accounts-facebook](https://github.com/meteor/meteor/tree/devel/packages/accounts-facebook)
+  * [service-configuration](https://atmospherejs.com/meteor/service-configuration)
+* UI and UX
+  * [fastclick](https://github.com/meteor/meteor/tree/devel/packages/fastclick)
+  * [meteorhacks:fast-render](https://github.com/meteorhacks/fast-render)
+  * [natestrauser:animate-css](https://github.com/nate-strauser/meteor-animate-css/)
+  * [mizzao:bootstrap-3](https://github.com/mangasocial/meteor-bootstrap-3)
+* Security
+  * [browser-policy](https://github.com/meteor/meteor/tree/devel/packages/browser-policy)
+  * [audit-argument-checks](https://github.com/meteor/meteor/tree/devel/packages/audit-argument-checks)
+  * [matteodem:easy-security](https://github.com/matteodem/meteor-easy-security)
+* Development
+  * [coffeescript](https://github.com/meteor/meteor/tree/devel/packages/coffeescript)
+  * [underscore](https://github.com/meteor/meteor/tree/devel/packages/underscore)
+  * [mquandalle:bower](https://github.com/mquandalle/meteor-bower/)
+* Monitoring
+  * [meteorhacks:kadira](https://github.com/meteorhacks/kadira/)
+  * [wylio:winston-papertrail](https://github.com/Wylio/meteor-winston-papertrail/)
+
+The "insecure" and "autopublish" packages are removed by default (they make your app vulnerable).
 
 ## To Do
 
+-  SEO packages
 -  Replace meteor-bower packages with custom packages to eliminate angular double-loading
 -  Animations
 -  Whatever else the people want
