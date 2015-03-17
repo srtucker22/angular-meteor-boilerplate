@@ -3,11 +3,15 @@ Meteor.methods({
   /**
    * update a user's permissions
    *
-   * @param {Object} targetUserId Id of user to update
+   * @param {String} targetUserId Id of user to update
    * @param {Array} roles User's new permissions
    * @param {String} group Company to update permissions for
    */
   updateRoles: function (targetUserId, roles, group) {
+    check(targetUserId, String);
+    check(roles, [String]);
+    check(group, String);
+
     var loggedInUser = Meteor.user();
 
     if (!loggedInUser ||
@@ -26,6 +30,9 @@ Meteor.methods({
    * @param {String} group Company to update permissions for
    */
   deleteUser: function (targetUserId, group) {
+    check(targetUserId, String);
+    check(group, String);
+
     var loggedInUser = Meteor.user();
 
     if (!loggedInUser ||
@@ -43,6 +50,7 @@ Meteor.methods({
 
 // don't allow existing low level user to create new users other than themselves
 Accounts.validateNewUser(function (user) {
+  
   var loggedInUser = this.userId;
 
   if (!loggedInUser || Roles.userIsInRole(loggedInUser, ['admin','manage-users'])) {
