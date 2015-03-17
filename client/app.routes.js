@@ -77,6 +77,12 @@
           controller: 'HomeCtrl',
           controllerAs: 'homectrl'
         })
+        .state('about', {
+          url: '/about',
+          templateUrl: 'client/about/about.ng.html',
+          controller: 'AboutCtrl',
+          controllerAs: 'aboutctrl'
+        })
         .state('401', {
           url: '/401',
           template: "<div class='row'>" + 
