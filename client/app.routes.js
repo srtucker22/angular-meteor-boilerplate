@@ -42,9 +42,18 @@
     };
 
     $rootScope.loginWithFacebook = function(){
+
+      // basic detect device type
+      var loginStyle;
+      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        loginStyle = 'redirect';  // redirect if mobile to avoid bug
+      } else {
+        loginStyle = 'popup'; // otherwise popup
+      }
+
       Meteor.loginWithFacebook({
         requestPermissions: ['public_profile', 'email'],
-        loginStyle: 'redirect'
+        loginStyle: loginStyle
       }, function(error) {
         if(error) {
           console.log(error);
