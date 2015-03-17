@@ -1,9 +1,11 @@
 Meteor.publish 'user', () -> 
-  check arguments, Match.OneOf(null, undefined)
-  return users.findOne this.userId
+  check arguments, Match.OneOf({}, null, undefined)
+  return Meteor.users.find {_id: this.userId}
 
 Meteor.publish 'users', () -> 
-  check arguments, Match.OneOf(null, undefined)
+  check arguments, Match.OneOf({}, null, undefined)
 
   if Roles.userIsInRole(this.userId, ['manage-users','admin'])
-    return users.find()
+    return Meteor.users.find()
+  else
+    this.ready()

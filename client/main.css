@@ -103,22 +103,107 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
+.danger {
+  color: #d9534f
+}
 
+.detail-element{
+  max-width: 320px;
+}
 
+.navbar-brand{
+  margin: auto 0;
+  padding: 5px 15px;
+}
 
+body{
+  font-family: "Unica One", sans-serif;
+}
 
+.container .text-muted {
+  margin: 20px 0;
+}
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
 
+body > div > div > .container {
+  padding: 60px 15px 0;
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
 
+.btn {
+  max-width: 100%;
+  white-space: normal;
+}
 
+.footer > .container img {
+  max-width: 20px;
+  max-height: 20px;
+}
 
+@media (max-width: 500px) {
+  .btn {
+    font-size: 20px;
+  }
 
+  .footer > .container > div{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 
+  .footer > .container div {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 10px;
+    font: 12px "Unica One", sans-serif;
+  }
 
+  .footer > .container img {
+    max-width: 14px;
+    max-height: 14px;
+  }
+}
 
+@media (max-width: 300px) {
+  .btn {
+    font-size: 20px;
+  }
+}
 
+@media (min-width: 500px){
+  .btn {
+    font-size: 30px;
+  }
 
+  .footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.github-fork-ribbon-wrapper.left-bottom .github-fork-ribbon {
+  top: 80px !important;
+  left: -43px !important;
+}
 
 /* ==========================================================================
    Helper classes
@@ -288,101 +373,4 @@ textarea {
     h3 {
         page-break-after: avoid;
     }
-}
-
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.danger {
-  color: #d9534f
-}
-
-.detail-element{
-  max-width: 320px;
-}
-
-.navbar-brand{
-  margin: auto 0;
-  padding: 5px 15px;
-}
-
-body{
-  font-family: "Unica One", sans-serif;
-}
-
-.container .text-muted {
-  margin: 20px 0;
-}
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 60px;
-  background-color: #f5f5f5;
-}
-
-body > div > div > .container {
-  padding: 60px 15px 0;
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
-}
-
-.btn {
-  max-width: 100%;
-  white-space: normal;
-}
-
-.footer > .container img {
-  max-width: 20px;
-  max-height: 20px;
-}
-
-@media (max-width: 500px) {
-  .btn {
-    font-size: 20px;
-  }
-
-  .footer > .container > div{
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-
-  .footer > .container div {
-    padding-left: 5px;
-    padding-right: 5px;
-    font-size: 10px;
-    font: 12px "Unica One", sans-serif;
-  }
-
-  .footer > .container img {
-    max-width: 14px;
-    max-height: 14px;
-  }
-}
-
-@media (max-width: 300px) {
-  .btn {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 500px){
-  .btn {
-    font-size: 30px;
-  }
-
-  .footer > .container {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-
-html {
-  position: relative;
-  min-height: 100%;
 }
