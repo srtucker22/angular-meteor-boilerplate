@@ -15,7 +15,7 @@ I really love Meteor for at least <a href="http://docs.meteor.com/#/full/sevenpr
 4. Add a settings.json to the primary directory <code>touch settings.json</code>
 5. Add your personal settings for the following services included in meteor-cryptogram (or remove the ones you don't want)
 
-        ```
+        
         {
           "facebook" : {
             "appId": "YOUR_APP_ID",
@@ -29,10 +29,12 @@ I really love Meteor for at least <a href="http://docs.meteor.com/#/full/sevenpr
             "port" : YOUR_PORT_NUMBER
           }
         }
-        ```
+        
 
 6. run the app with the settings <code>meteor --settings settings.json</code>
 7. enjoy!
+
+PS: be sure to also modify ga.js to reflect your google analytics id and domain
 
 ### Adding allow rules for external URLs
 
@@ -101,6 +103,7 @@ lib/                # Library files that get executed first
 private/                # Private files
 public/                 # Public files
   assets/                # Image assets
+  ga.js                # google analytics setup
 server/         # Server folder
   config/                # Configuration files (on the server)
   lib/                # Server side library folder
