@@ -1,0 +1,12 @@
+{
+  "name": "meteor-cryptogram",
+  "version": "0.0.1",
+  "dependencies": {
+    "sprintf": "~1.0.2",
+    "matchmedia-ng": "~1.0.5",
+    "zeroclipboard": "~2.2.0",
+    "ng-clip": "~0.2.6",
+    "angulike": "*"
+  },
+  "private": true
+}

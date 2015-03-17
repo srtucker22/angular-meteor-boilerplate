@@ -1,0 +1,89 @@
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>angular-meteor boilerplate</title>
+  <meta name="description" content="boilerplate for angular-meteor">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="/meteor-shield.ico">
+  <link rel="icon" href="/meteor-shield.ico">
+
+  <base href="/">
+  
+  <link href="//fonts.googleapis.com/css?family=Unica+One" rel="stylesheet" type="text/css">
+
+  <meta name="twitter:widgets:csp" content="on">
+
+  <script type="text/javascript" src="//www.google-analytics.com/analytics.js"></script>
+  <script type="text/javascript" src="/ga.js"></script>
+</head>
+
+<body>
+  <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div id="fb-root"></div>
+
+  <div ng-app='app' ng-cloak ng-strict-di ng-csp>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" ui-sref="dashboard">
+            <img alt="Brand" src="/assets/angular-meteor-shield.png" width="38px" height="40px">
+          </a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" ng-click="revealCollapsed = !revealCollapsed">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" collapse="!revealCollapsed">
+          <ul class="nav navbar-nav navbar-left">
+            <li>
+              <a ui-sref="home" ui-sref-active="active">
+                home
+              </a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown" dropdown on-toggle="toggled(open)">
+              <a href class="dropdown-toggle" dropdown-toggle>
+                {{currentUser.profile.name}}
+              </a>
+              <ul class="dropdown-menu" ng-show="currentUser && currentUser.profile.name">
+                <li><a href ng-click="logout()">logout</a></li>
+              </ul>
+            </li>
+            <li class="dropdown" ng-show="(!currentUser || !currentUser.profile.name) && !loggingIn">
+              <a href ng-click="loginWithFacebook()">
+                login
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div ui-view></div>
+
+    <div class="container" style="padding-bottom: 60px" ng-show="!('404' | isState) && !('401' | isState)">
+      <div class="row text-center">
+        <div class="col-md-offset-4 col-md-2 col-xs-6" ng-show="facebookUrl" fb-like="facebookUrl"></div>
+        <div class="col-md-2 col-xs-6" ng-show="tweet" tweet="tweet"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container text-uppercase">
+        <div class="row">
+          <div class="col-xs-6 text-left text-muted"><a href="//glipcode.com" target="_blank">Glipcode</a>, Copyright © 2015</div>
+          <div class="col-xs-6 text-right text-muted">Made with <span class="glyphicon glyphicon-heart"></span> using <a href="//angularjs.meteor.com" target="_blank"><img src="/assets/angular-meteor-shield.png"/></a></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+</body>
