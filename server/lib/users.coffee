@@ -1,14 +1,9 @@
 Schema = {}
 
 Schema.UserProfile = new SimpleSchema(
-  firstName:
-    type: String
-    regEx: /^[a-zA-Z-]{2,25}$/
-    optional: true
-
-  lastName:
+  name:
     type: String,
-    regEx: /^[a-zA-Z]{2,25}$/
+    regEx: /^[a-z0-9A-z . -]{3,30}$/,
     optional: true
 
   birthday: 
