@@ -6,6 +6,7 @@ BrowserPolicy.content.allowOriginForAll "*.bootstrapcdn.com"
 BrowserPolicy.content.allowOriginForAll "*.semantic-ui.com"
 
 BrowserPolicy.content.allowOriginForAll "*.google-analytics.com"
+BrowserPolicy.content.allowOriginForAll "*.stats.g.doubleclick.net"
 
 BrowserPolicy.content.allowFontDataUrl()
 
