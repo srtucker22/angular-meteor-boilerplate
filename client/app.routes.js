@@ -73,13 +73,13 @@
       $stateProvider
         .state('home', {
           url: '/',
-          templateUrl: 'client/home/home.ng.html',
+          templateUrl: 'client/views/home/home.ng.html',
           controller: 'HomeCtrl',
           controllerAs: 'homectrl'
         })
         .state('about', {
           url: '/about',
-          templateUrl: 'client/about/about.ng.html',
+          templateUrl: 'client/views/about/about.ng.html',
           controller: 'AboutCtrl',
           controllerAs: 'aboutctrl'
         })
