@@ -6,7 +6,9 @@
     "matchmedia-ng": "~1.0.5",
     "zeroclipboard": "~2.2.0",
     "ng-clip": "~0.2.6",
-    "angulike": "*"
+    "angulike": "*",
+    "angular-bootstrap": "~0.12.1",
+    "github-fork-ribbon-css": "~0.1.1"
   },
   "private": true
 }
