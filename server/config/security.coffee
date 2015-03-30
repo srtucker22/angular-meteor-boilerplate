@@ -18,3 +18,4 @@ BrowserPolicy.content.allowFrameOrigin "s-static.ak.facebook.com"
 
 # for twitter
 BrowserPolicy.content.allowOriginForAll "platform.twitter.com"
+BrowserPolicy.content.allowOriginForAll "syndication.twitter.com"

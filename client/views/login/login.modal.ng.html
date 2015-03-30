@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h3 class="modal-title text-center">Log in to {{loginmodalctrl.appName}}</h3>
+</div>
+<div class="modal-body">
+  <form class="form" novalidate name="loginForm">
+    <alert ng-if="loginmodalctrl.alert" type="{{loginmodalctrl.alert.type}}" close="loginmodalctrl.alert = null;">{{loginmodalctrl.alert.msg}}</alert>
+    <div class="input-group">
+      <input class="form-control" type="email" name="email" placeholder="Email" ng-model="loginmodalctrl.user.email" required/>
+      <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+    </div>
+    <br>
+    <div class="input-group">
+      <input class="form-control" name="pw" type="password" placeholder="Password" ng-model="loginmodalctrl.user.pass" required/>
+      <span class="input-group-addon"><span class="glyphicon glyphicon-flash"></span>
+    </div>
+    <br>
+    <a ng-click="loginmodalctrl.forgotPassword()"><p>forgot password?</p></a>
+    <button type="submit" class="btn btn-primary btn-block" ng-click="loginmodalctrl.loginWithPassword(loginmodalctrl.user)">Log in</button>
+  </form>
+  <hr>
+  <p class="text-center">or you can also:</p>
+  <button class="btn btn-primary facebook-button btn-block" ng-click="loginmodalctrl.loginWithFacebook()">Log in with Facebook</button>
+</div>

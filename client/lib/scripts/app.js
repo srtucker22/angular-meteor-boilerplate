@@ -5,11 +5,17 @@
     ngClipProvider.setConfig({
       hoverClass:"btn-clipboard-hover"
     });
-  }]);
+  }])
+  .constant("APP", {
+    "NAME": "Angular-Meteor Boilerplate"
+  })
+  .constant("FACEBOOK", {
+    "APP_ID": "MY_FACEBOOK_APP_ID"
+  })
 
-  angular.module("app").run([
-    '$rootScope', function ($rootScope) {
-      $rootScope.facebookAppId = '344290532427325'; // set your facebook app id here
+  .run([
+    '$rootScope', 'FACEBOOK', function ($rootScope, FACEBOOK) {
+      $rootScope.facebookAppId = FACEBOOK.APP_ID; // set your facebook app id here
     }
   ]);
 })();

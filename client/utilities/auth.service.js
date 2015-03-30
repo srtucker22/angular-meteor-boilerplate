@@ -1,16 +1,16 @@
 (function(){
   angular.module('app').factory('authService', authService);
 
-  authService.$inject = ['$rootScope', '$q'];
+  authService.$inject = ['$meteor', '$q', '$rootScope'];
 
-  function authService($rootScope, $q){
+  function authService($meteor, $q, $rootScope){
     return {
       getLoginStatus: getLoginStatus
     };
 
     function getLoginStatus(roles){
       var defer = $q.defer();
-      $rootScope.currentUserPromise.then(function(currentUser){
+      $meteor.waitForUser().then(function(currentUser){
         if(currentUser){
           if(roles){
             if(currentUser.roles && currentUser.roles.__global_roles__ && _.intersection(currentUser.roles.__global_roles__, roles).length > 0){

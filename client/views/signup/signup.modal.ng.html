@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <h3 class="modal-title text-center">Sign up for {{signupmodalctrl.appName}}</h3>
+</div>
+<div class="modal-body">
+  <alert ng-if="signupmodalctrl.alert" type="{{signupmodalctrl.alert.type}}" close="signupmodalctrl.alert = null;">{{signupmodalctrl.alert.msg}}</alert>
+  <form class="form" name="signupForm" novalidate>
+    <input class="form-control" name="name" ng-model="signupmodalctrl.user.profile.name" type="text" placeholder="Name" required/>
+    <br>
+    <input class="form-control" name="email" ng-model="signupmodalctrl.user.email" type="email" placeholder="Email" required/>
+    <br>
+    <input class="form-control" name="pw" type="password" ng-model="signupmodalctrl.user.password" placeholder="Password" required/>
+    <br>
+    <button type="submit" class="btn btn-primary btn-block" ng-click="signupmodalctrl.createUser(signupmodalctrl.user)">Sign up</button>
+  </form>
+  <hr>
+  <p class="text-center">or you can also:</p>
+  <button class="btn btn-primary facebook-button btn-block" ng-click="signupmodalctrl.loginWithFacebook()">Log in with Facebook</button>
+</div>

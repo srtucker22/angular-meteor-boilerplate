@@ -36,7 +36,7 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" ui-sref="dashboard">
+          <a class="navbar-brand" ui-sref="home">
             <img alt="Brand" src="/assets/angular-meteor-shield-large.png" width="38px" height="40px">
           </a>
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" ng-click="revealCollapsed = !revealCollapsed">
@@ -59,6 +59,14 @@
               </a>
             </li>
           </ul>
+          <div class="navbar-form navbar-right" ng-show="(!currentUser || !currentUser.profile.name) && !loggingIn">
+            <button class="btn btn-primary nav-button" ng-click="openSignupModal()">
+              Sign up
+            </button>
+            <button class="btn btn-default nav-button" ng-click="openLoginModal()">
+              Log in
+            </button>
+          </div>
           <ul class="nav navbar-nav navbar-right">
             <li class="dropdown" dropdown on-toggle="toggled(open)">
               <a href class="dropdown-toggle" dropdown-toggle>
@@ -67,11 +75,6 @@
               <ul class="dropdown-menu" ng-show="currentUser && currentUser.profile.name">
                 <li><a href ng-click="logout()">logout</a></li>
               </ul>
-            </li>
-            <li class="dropdown" ng-show="(!currentUser || !currentUser.profile.name) && !loggingIn">
-              <a href ng-click="loginWithFacebook()">
-                login
-              </a>
             </li>
           </ul>
         </div>
