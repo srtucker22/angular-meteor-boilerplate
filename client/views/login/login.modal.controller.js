@@ -34,12 +34,12 @@
     function loginWithPassword(user){
       if($scope.loginForm.$invalid){
         
-        if($scope.loginForm.email.$invalid){
+        if(!$scope.loginForm.email || $scope.loginForm.email.$invalid){
           vm.alert = {type: "danger", msg: "please enter a valid email address"};
           return;
         }
 
-        if($scope.loginForm.password.$invalid){
+        if(!$scope.loginForm.password || $scope.loginForm.password.$invalid){
           vm.alert = {type: "danger", msg: "please enter a valid password"};
           return;
         }

@@ -13,17 +13,17 @@
     function createUser(user){
       if($scope.signupForm.$invalid){
         
-        if($scope.signupForm.name.$invalid){
+        if(!$scope.signupForm.name || $scope.signupForm.name.$invalid){
           vm.alert = {type: "danger", msg: "please enter a valid name"};
           return;
         }
 
-        if($scope.signupForm.email.$invalid){
+        if(!$scope.signupForm.email || $scope.signupForm.email.$invalid){
           vm.alert = {type: "danger", msg: "please enter a valid email address"};
           return;
         }
 
-        if($scope.signupForm.pw.$invalid){
+        if(!$scope.signupForm.pw || $scope.signupForm.pw.$invalid){
           vm.alert = {type: "danger", msg: "please enter a valid password"};
           return;
         }
