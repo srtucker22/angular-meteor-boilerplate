@@ -21,8 +21,10 @@ mquandalle:bower
 dburles:collection-helpers
 meteorhacks:kadira
 fastclick
-mizzao:bootstrap-3
+twbs:bootstrap
+angularui:angular-ui-bootstrap
 urigo:angular
 angularui:angular-ui-router
 natestrauser:animate-css
 wylio:winston-papertrail
+liyu:sprintfjs
