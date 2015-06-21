@@ -10,7 +10,7 @@
     "NAME": "Angular-Meteor Boilerplate"
   })
   .constant("FACEBOOK", {
-    "APP_ID": "MY_FACEBOOK_APP_ID"
+    "APP_ID": "344290532427325"
   })
 
   .run([
