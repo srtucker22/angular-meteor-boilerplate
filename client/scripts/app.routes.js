@@ -1,25 +1,22 @@
 (function(){
   angular.module("app").run(['$log', '$rootScope', '$state', '$meteor', '$modal', function($log, $rootScope, $state, $meteor, $modal) {
-
+  
     $rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error){ 
       // console.log(event);
       // console.log(toState);
       // console.log(toParams);
       // console.log(fromState);
       // console.log(fromParams);
-      console.log(error);
+      console.error(error);
 
-      if (error === "AUTH_REQUIRED") {
-        $state.go('home');
-      } else if (error === "AUTH_FORBIDDEN") {
+      if (error === 'AUTH_REQUIRED') {
+        $state.go('401');
+      } else if (error === 'AUTH_FORBIDDEN') {
         $state.go('dashboard');
       } else {
         $state.go('404');
       }
     });
-
-    $rootScope.tweet = "your tweet message";
-    $rootScope.facebookUrl = "//yourpath.meteor.com/";
 
     $rootScope.$watch('currentUser', function(currentUser, previousState){
       if(currentUser && !$rootScope.subscriptionHandle){
@@ -37,7 +34,7 @@
       if($rootScope.currentUser){
         Meteor.logout(function(error){
           if(error){
-            console.log('err', error);
+            console.error('err', error);
           }
         });
       }
@@ -46,7 +43,7 @@
     $rootScope.openSignupModal = function (size) {
 
       var modalInstance = $modal.open({
-        templateUrl: 'client/views/signup/signup.modal.ng.html',
+        templateUrl: 'client/views/modules/signup.modal.ng.html',
         controller: 'SignupModalCtrl',
         controllerAs: 'signupmodalctrl',
         backdrop: true,
@@ -64,7 +61,7 @@
     $rootScope.openLoginModal = function (size) {
 
       var modalInstance = $modal.open({
-        templateUrl: 'client/views/login/login.modal.ng.html',
+        templateUrl: 'client/views/modules/login.modal.ng.html',
         controller: 'LoginModalCtrl',
         controllerAs: 'loginmodalctrl',
         backdrop: true,
@@ -77,7 +74,7 @@
       }, function (err) {
         if(err === 'forgot'){
           modalInstance = $modal.open({
-            templateUrl: 'client/views/login/forgot.modal.ng.html',
+            templateUrl: 'client/views/modules/forgot.modal.ng.html',
             controller: 'ForgotModalCtrl',
             controllerAs: 'forgotmodalctrl',
             backdrop: true,
@@ -90,21 +87,35 @@
     };
   }]);
 
-  angular.module("app").config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
+  angular.module('app').config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
     function($urlRouterProvider, $stateProvider, $locationProvider){
 
       $locationProvider.html5Mode(true);
 
       $stateProvider
+        .state('admin', {
+          url: '/admin',
+          templateUrl: 'client/views/admin.ng.html',
+          controller: 'AdminCtrl',
+          controllerAs: 'adminctrl',
+          resolve: {
+            currentUser: ['$meteor', function($meteor){
+              var roles = ['admin'];
+              return $meteor.requireValidUser(function(user) {
+                return user.roles && user.roles.__global_roles__ && _.intersection(user.roles.__global_roles__, roles).length > 0;
+              });
+            }],
+          }
+        })
         .state('home', {
           url: '/',
-          templateUrl: 'client/views/home/home.ng.html',
+          templateUrl: 'client/views/home.ng.html',
           controller: 'HomeCtrl',
           controllerAs: 'homectrl'
         })
         .state('about', {
           url: '/about',
-          templateUrl: 'client/views/about/about.ng.html',
+          templateUrl: 'client/views/about.ng.html',
           controller: 'AboutCtrl',
           controllerAs: 'aboutctrl'
         })
@@ -125,6 +136,6 @@
                     "</div>"
         });
 
-    $urlRouterProvider.otherwise("/404");
+    $urlRouterProvider.otherwise('/404');
   }]);
 })();

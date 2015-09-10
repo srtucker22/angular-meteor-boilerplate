@@ -1,10 +1,7 @@
 {
-  "name": "meteor-cryptogram",
+  "name": "angular-meteor-boilerplate",
   "version": "0.0.1",
   "dependencies": {
-    "matchmedia-ng": "~1.0.5",
-    "zeroclipboard": "~2.2.0",
-    "ng-clip": "~0.2.6",
     "angulike": "*",
     "github-fork-ribbon-css": "~0.1.1"
   },

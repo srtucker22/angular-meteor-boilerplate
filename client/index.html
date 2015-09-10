@@ -27,68 +27,11 @@
   <div id="fb-root"></div>
 
   <div ng-app='app' ng-cloak ng-strict-di ng-csp>
-    <div class="github-fork-ribbon-wrapper left-bottom">
-      <div class="github-fork-ribbon">
-          <a href="https://github.com/srtucker22/angular-meteor-boilerplate">Fork me on GitHub</a>
-      </div>
-    </div>
+    <github></github>
 
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" ui-sref="home">
-            <img alt="Brand" src="/assets/angular-meteor-shield-large.png" width="38px" height="40px">
-          </a>
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" ng-click="revealCollapsed = !revealCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse" collapse="!revealCollapsed">
-          <ul class="nav navbar-nav navbar-left">
-            <li>
-              <a ui-sref="home" ui-sref-active="active">
-                home
-              </a>
-            </li>
-            <li>
-              <a ui-sref="about" ui-sref-active="active">
-                about
-              </a>
-            </li>
-          </ul>
-          <div class="navbar-form navbar-right" ng-show="(!currentUser || !currentUser.profile.name) && !loggingIn">
-            <button class="btn btn-primary nav-button" ng-click="openSignupModal()">
-              Sign up
-            </button>
-            <button class="btn btn-default nav-button" ng-click="openLoginModal()">
-              Log in
-            </button>
-          </div>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown" dropdown on-toggle="toggled(open)">
-              <a href class="dropdown-toggle" dropdown-toggle>
-                {{currentUser.profile.name}}
-              </a>
-              <ul class="dropdown-menu" ng-show="currentUser && currentUser.profile.name">
-                <li><a href ng-click="logout()">logout</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+    <navbar></navbar>
+    
     <div ui-view></div>
-
-    <div class="container" style="padding-bottom: 60px" ng-show="!('404' | isState) && !('401' | isState)">
-      <div class="row text-center">
-        <div class="col-md-offset-4 col-md-2 col-xs-6" ng-show="facebookUrl" fb-like="facebookUrl"></div>
-        <div class="col-md-2 col-xs-6" ng-show="tweet" tweet="tweet"></div>
-      </div>
-    </div>
 
     <footer class="footer">
       <div class="container text-uppercase">

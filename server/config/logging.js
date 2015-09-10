@@ -17,7 +17,7 @@ log.add( Winston_Papertrail, {
     auth: 'red'
   },
 
-  host: "logs2.papertrailapp.com",
+  host: 'logs2.papertrailapp.com',
   port: Meteor.settings.papertrail.port, 
   handleExceptions: true,
   json: true,
@@ -27,4 +27,4 @@ log.add( Winston_Papertrail, {
   }
 });
 
-log.info(" =====> Meteor App restarted "+ new Date( Date.now()) +" <=====");
+log.info(' =====> Meteor App restarted '+ new Date( Date.now()) +' <=====');

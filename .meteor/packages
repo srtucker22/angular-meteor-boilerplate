@@ -23,8 +23,13 @@ meteorhacks:kadira
 fastclick
 twbs:bootstrap
 angularui:angular-ui-bootstrap
-urigo:angular
 angularui:angular-ui-router
 natestrauser:animate-css
 wylio:winston-papertrail
 liyu:sprintfjs
+angular
+force-ssl
+meteorhacks:npm
+
+
+npm-container
