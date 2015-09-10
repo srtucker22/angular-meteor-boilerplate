@@ -94,36 +94,34 @@ The "insecure" and "autopublish" packages are removed by default (they make your
 ### Folder structure
 
 ```
-client/         # Client folder
-    config/             # Configuration files (on the client)
-  lib/                # Library files that get executed first
-    scripts/            # Javascript files including app.js and modernizr
-    styles/         # clutch css files -- normalize.css
-  utilities/          # Contains common services and directives
-  scripts/
-    app.routes.js          # ui-router config
-    controllers/          # Contains all controllers
-    directives/          # Contains all directives
+client/                # Client folder
+    config/            # Configuration files (on the client)
+  lib/                 # Library files that get executed first
+    scripts/           # Javascript files including app.js and modernizr
+    styles/            # clutch css files -- normalize.css
+  scripts/             # all the angular scripts except app.js
+    app.routes.js      # ui-router config
+    controllers/       # Contains all controllers
+    directives/        # Contains all directives
     services/          # Contains all services/factories
-  styles/
-    main.css         # main css file
-  views/          # Contains all views (html tempalates)
-    modules/      # templates for directives and small modules
-  index.html         # main html page
-lib/                # Library files that get executed first
-  models/          # Model files, for each Meteor.Collection
-private/                # Private files
-public/                 # Public files
-  assets/                # Image assets
+  styles/              # Contains all custom styles
+  views/               # Contains all views (html tempalates)
+    modules/           # templates for directives and small modules
+  index.html           # main html page
+lib/                   # Library files that get executed first
+  models/              # Model files, for each Meteor.Collection
+private/               # Private files
+public/                # Public files
+  assets/              # Image assets
   ga.js                # google analytics setup
-server/         # Server folder
-  config/                # Configuration files (on the server)
-  lib/                # Server side library folder
-  publications/       # Collection publications
-  startup/            # On server startup
-.gitignore            # add to this gitignore for ignoring
-bower.json            # add to this bower file or use bower install
-*settings.json*       # Meteor.settings file -- you need to add this file (touch settings.json)
+server/                # Server folder
+  config/              # Configuration files (on the server)
+  lib/                 # Server side library folder
+  publications/        # Collection publications
+  startup/             # On server startup
+.gitignore             # add to this gitignore for ignoring
+bower.json             # add to this bower file or use bower install
+*settings.json*        # Meteor.settings file -- you need to add this file (touch settings.json)
 ```
 
 ## To Do

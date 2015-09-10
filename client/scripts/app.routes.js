@@ -29,62 +29,6 @@
         $rootScope.$broadcast('currentUser');
       }
     });
-
-    $rootScope.logout = function(){
-      if($rootScope.currentUser){
-        Meteor.logout(function(error){
-          if(error){
-            console.error('err', error);
-          }
-        });
-      }
-    };
-
-    $rootScope.openSignupModal = function (size) {
-
-      var modalInstance = $modal.open({
-        templateUrl: 'client/views/modules/signup.modal.ng.html',
-        controller: 'SignupModalCtrl',
-        controllerAs: 'signupmodalctrl',
-        backdrop: true,
-        size: size,
-        windowClass: 'auth-modal'
-      });
-
-      modalInstance.result.then(function (res) {
-        
-      }, function () {
-        $log.info('Modal dismissed at: ' + new Date());
-      });
-    };
-
-    $rootScope.openLoginModal = function (size) {
-
-      var modalInstance = $modal.open({
-        templateUrl: 'client/views/modules/login.modal.ng.html',
-        controller: 'LoginModalCtrl',
-        controllerAs: 'loginmodalctrl',
-        backdrop: true,
-        size: size,
-        windowClass: 'auth-modal'
-      });
-
-      modalInstance.result.then(function (res) {
-        // user successfully logged in
-      }, function (err) {
-        if(err === 'forgot'){
-          modalInstance = $modal.open({
-            templateUrl: 'client/views/modules/forgot.modal.ng.html',
-            controller: 'ForgotModalCtrl',
-            controllerAs: 'forgotmodalctrl',
-            backdrop: true,
-            size: size,
-            windowClass: 'auth-modal'
-          });
-        }else
-          $log.info('Modal dismissed at: ' + new Date());
-      });
-    };
   }]);
 
   angular.module('app').config(['$urlRouterProvider', '$stateProvider', '$locationProvider',
