@@ -1,0 +1,14 @@
+{
+  "generator-angular-meteor": {
+    "filters": {
+      "js": true,
+      "html": true,
+      "css": true,
+      "pagination": true,
+      "framework": "bootstrap",
+      "bower": true,
+      "auth": true
+    },
+    "appname": "appName"
+  }
+}

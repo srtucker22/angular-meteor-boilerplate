@@ -15,7 +15,7 @@
 
       // basic detect device type
       var loginStyle;
-      if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+      if(bowser.mobile || bowser.tablet) {
         loginStyle = 'redirect';  // redirect if mobile to avoid bug
       } else {
         loginStyle = 'popup'; // otherwise popup
@@ -27,7 +27,7 @@
       }).then(function(res){
         $modalInstance.close(res);
       }, function(err){
-        console.log(err);
+        console.error(err);
       });
     }
 

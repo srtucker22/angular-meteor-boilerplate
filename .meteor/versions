@@ -33,6 +33,7 @@ ejson@1.0.6
 email@1.0.6
 facebook@1.2.1
 fastclick@1.0.3
+flowkey:bowser@1.0.2
 force-ssl@1.0.4
 geojson-utils@1.0.3
 html-tools@1.0.4
@@ -80,6 +81,7 @@ session@1.1.0
 sha@1.0.3
 spacebars@1.0.6
 spacebars-compiler@1.0.6
+spiderable@1.0.7
 srp@1.0.3
 templating@1.1.1
 tracker@1.0.7

@@ -38,6 +38,9 @@ I really love Meteor for at least <a href="http://docs.meteor.com/#/full/sevenpr
 6. run the app with the settings <code>meteor --settings settings.json</code>
 7. enjoy!
 
+8. **_*optional_** with npm installed, install <a href="yeoman.io">Yeoman</a> and the <a href="https://www.npmjs.com/package/generator-angular-meteor">generator-angular-meteor</a> packages: <code>npm install -g yo generator-angular-meteor</code>. Read the <a href="https://www.npmjs.com/package/generator-angular-meteor">generator-angular-meteor docs</a> for usage. 
+**_*note:_** generator-angular-meteor puts some files in weird places that this boilerplate doesn't agree with, so this still needs tweaking. Stay tuned for future releases!
+
 PS: be sure to also modify ga.js to reflect your google analytics id and domain
 
 ### Adding allow rules for external URLs
@@ -71,6 +74,7 @@ Other security enforcing packages like [audit-argument-checks](https://docs.mete
   * [service-configuration](https://atmospherejs.com/meteor/service-configuration)
 * UI and UX
   * [fastclick](https://github.com/meteor/meteor/tree/devel/packages/fastclick)
+  * [flowkey:bowser](https://github.com/flowkey/meteor-bowser/)
   * [meteorhacks:fast-render](https://github.com/meteorhacks/fast-render)
   * [natestrauser:animate-css](https://github.com/nate-strauser/meteor-animate-css/)
   * [twbs:bootstrap](https://github.com/twbs/bootstrap)
@@ -126,9 +130,11 @@ bower.json             # add to this bower file or use bower install
 
 ## To Do
 
+-  clean up user subscription stuff
+-  test spiderable
+-  add more google analytics
 -  SEO packages
--  Replace meteor-bower packages with custom packages to eliminate angular double-loading
--  CLI Generator!
+-  CLI Generator tweaks
 -  Animations
 -  Whatever else the people want
 
